@@ -84,9 +84,9 @@
     {
       "part1": {
         "solved": true,
-        "result": "1479",
+        "result": "1480",
         "attempts": [],
-        "time": 0.343
+        "time": 0.739625
       },
       "part2": {
         "solved": true,
@@ -95,7 +95,7 @@
           "2747",
           "1737"
         ],
-        "time": 16.441292
+        "time": 2.681875
       }
     },
     {
