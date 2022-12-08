@@ -39,7 +39,6 @@ const parseInput = (rawInput: string) => {
             type: "cd",
             cwd: [...cwd]
           });
-          continue;
         } else if (directory === "/") {
           cwd = [];
           commands.push({
@@ -75,7 +74,6 @@ const parseInput = (rawInput: string) => {
             });
           }
         };
-
         commands.push({
           type: "ls",
           cwd,
@@ -92,8 +90,6 @@ const parseInput = (rawInput: string) => {
     if (command.type === "cd") {
       cwd = command.cwd;
     } else if (command.type === "ls") {
-      const cwdString = cwd.join("/");
-
       // create objects from the cwd
       let current = fs;
       for (const dir of cwd) {
