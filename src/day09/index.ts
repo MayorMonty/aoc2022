@@ -56,20 +56,6 @@ const parseInput = (rawInput: string, n: number) => {
       }
     };
 
-    if (instructions.length < 20) {
-      const grid = [...new Array(6).fill([])].map(() => new Array(6).fill("."));
-      grid[rope[0].y][rope[0].x] = "H";
-      grid[rope[rope.length - 1].y][rope[rope.length - 1].x] = "T";
-
-      for (let row = 4; row >= 0; row--) {
-        for (let col = 0; col < 6; col++) {
-          process.stdout.write(grid[row][col]);
-        }
-        process.stdout.write("\n");
-      }
-      console.log("\n");
-    }
-
     return rope[rope.length - 1];
   };
 
@@ -123,7 +109,6 @@ const part2 = (rawInput: string) => {
   const tailPositions = new Set<string>();
 
   for (const { command, value } of instructions) {
-    if (instructions.length < 20) console.log(`== ${command} ${value} ==`)
     switch (command) {
       case "U":
         for (let i = 0; i < value; i++) {
